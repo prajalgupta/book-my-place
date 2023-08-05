@@ -1,8 +1,7 @@
 import {Link, Navigate} from "react-router-dom";
 import { useContext, useState } from "react";
-import axios from "axios";
 import { UserContext } from "../UserContext";
-
+import axios from "axios";
 
 const Login =() => {
     const [email, setEmail] = useState('');
@@ -23,14 +22,14 @@ const Login =() => {
     }
 
     if(redirect){
-        return <Navigate to={'/'}/>
+        return <Navigate to = {'/'}/>
     }
 
     return(
-        <div className="mt-4 grow flex items-center justify-around">
-            <div className="mb-64">
-                <h1 className="text-4xl text-center mb-4">Login</h1>
-                <form className="max-w-md mx-auto " onSubmit={handleLoginSubmit}>
+        <div className = "mt-4 grow flex items-center justify-around">
+            <div className = "mb-64">
+                <h1 className = "text-4xl text-center mb-4">Login</h1>
+                <form className = "max-w-md mx-auto " onSubmit = {handleLoginSubmit}>
                     <input type = "email" 
                         placeholder = "your@email.com" 
                         value = {email} 
@@ -38,10 +37,10 @@ const Login =() => {
                     <input type = "password" 
                         placeholder = "password" 
                         value = {password} 
-                        onChange={ev => setPassword(ev.target.value)}/>
-                    <button className="primary">Login</button>
-                    <div className="text-center py-2 text-gray-500">
-                        Don't have an account yet? <Link className="underline text-black" to={'/register'}>Register now</Link>
+                        onChange = {ev => setPassword(ev.target.value)}/>
+                    <button className = "primary">Login</button>
+                    <div className = "text-center py-2 text-gray-500">
+                        Don't have an account yet? <Link className="underline text-black" to = {'/register'}>Register now</Link>
                     </div>
                 </form>
             </div>
