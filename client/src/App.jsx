@@ -8,6 +8,9 @@ import Register from './components/Register';
 import Profile from './components/Profile';
 import Places from './components/Places';
 import PlacesForm from './components/PlacesForm';
+import Place from './components/Place';
+import Bookings from './components/Bookings';
+import Booking from './components/Booking';
 import axios from 'axios';
 
 axios.defaults.baseURL = 'http://127.0.0.1:4000';
@@ -25,6 +28,9 @@ function App() {
           <Route path = "/profile/places" element = {<Places/>} />
           <Route path = "/profile/places/new" element = {<PlacesForm/>} />
           <Route path = "/profile/places/:id" element = {<PlacesForm/>} />
+          <Route path="/place/:id" element = {<Place/>}/>
+          <Route path = "/profile/bookings" element = {<Bookings/>} />
+          <Route path = "/profile/bookings/:id" element = {<Booking/>} />
         </Route>
       </Routes>
     </UserContextProvider>

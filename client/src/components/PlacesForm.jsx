@@ -17,6 +17,7 @@ const PlacesForm = () => {
     const [checkIn,setCheckIn] = useState('');
     const [checkOut,setCheckOut] = useState('');
     const [maxGuests,setMaxGuests] = useState(1);
+    const [price, setPrice] = useState(100);
     const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
@@ -34,6 +35,7 @@ const PlacesForm = () => {
         setCheckIn(data.checkIn);
         setCheckOut(data.checkOut);
         setMaxGuests(data.maxGuests);
+        setPrice(data.price);
       });
     }, [id]);
 
@@ -63,7 +65,7 @@ const PlacesForm = () => {
         const placeData = {
           title, address, addedPhotos,
           description, perks, extraInfo,
-          checkIn, checkOut, maxGuests
+          checkIn, checkOut, maxGuests, price
         };
         if (id) {
           //update
@@ -101,18 +103,22 @@ const PlacesForm = () => {
                 {preInput('Extra Info','house rules,etc')}
                 <textarea value = {extraInfo} onChange = {ev => setExtraInfo(ev.target.value)}/>
                 {preInput('Check-In, Check-Out time', 'add check in and out times, remember to have a window for cleaning between guests')}
-                <div grid sm:grid-cols-3>
+                <div className = "grid grid-cols-2 md:grid-cols-4" >
                     <div>
                         <h3 className = "mt-2 -mb-1">Check In time</h3>
                         <input type = "text" value = {checkIn} onChange = {ev => setCheckIn(ev.target.value)} placeholder = "11:00"/>
                     </div>
                     <div>
-                        <h3>Check Out time</h3>
+                        <h3 className = "mt-2 -mb-1">Check Out time</h3>
                         <input type = "text" value = {checkOut} onChange = {ev => setCheckOut(ev.target.value)} placeholder = "10:00"/>
                     </div>
                     <div>
-                        <h3>max guests</h3>
-                        <input type = "number" value = {maxGuests} onChange = {ev => setMaxGuests(ev.target.value)} placeholder = "3" />
+                        <h3 className = "mt-2 -mb-1">max guests</h3>
+                        <input type = "number" value = {maxGuests} onChange = {ev => setMaxGuests(ev.target.value)} />
+                    </div>
+                    <div>
+                        <h3 className = "mt-2 -mb-1">Price per night</h3>
+                        <input type = "number" value = {price} onChange = {ev => setPrice(ev.target.value)} />
                     </div>
                 </div>
                 <button className = "primary my-4">Save</button>
