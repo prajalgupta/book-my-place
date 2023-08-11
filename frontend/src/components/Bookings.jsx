@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
-import UserNav from "../UserNav";
+import UserNav from "../containers/UserNav";
 import axios from "axios";
-import PlaceImg from "../PlaceImg";
-import BookingDates from "../BookingDates";
+import PlaceImg from "../containers/PlaceImg";
+import BookingDates from "../containers/BookingDates";
 
 
 const Bookings = () => {

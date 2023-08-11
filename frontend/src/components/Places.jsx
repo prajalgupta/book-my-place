@@ -1,8 +1,8 @@
 import {Link} from "react-router-dom";
-import UserNav from "../UserNav";
+import UserNav from "../containers/UserNav";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import PlaceImg from "../PlaceImg";
+import PlaceImg from "../containers/PlaceImg";
 
 const Places = () =>{
     const [places, setPlaces] = useState([]);
