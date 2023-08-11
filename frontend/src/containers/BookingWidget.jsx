@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import {differenceInCalendarDays} from "date-fns";
-import axios from "axios";
 import { Navigate } from "react-router-dom";
 import {UserContext} from "./UserContext.jsx";
+import {differenceInCalendarDays} from "date-fns";
+import axios from "axios";
 
 const BookingWidget = ({place}) => {
     const [checkIn, setCheckIn] = useState('');
@@ -34,51 +34,51 @@ const BookingWidget = ({place}) => {
     }
 
     if(redirect){
-        return <Navigate to={redirect} />
+        return <Navigate to = {redirect} />
     }
 
     return(
-        <div className="bg-white shadow p-4 rounded-2xl">
+        <div className = "bg-white shadow p-4 rounded-2xl">
             <div className = "text-2xl text-center">
                 Price: Rs. {place.price}/ per night
             </div>
-            <div className="border rounded-2xl mt-4">
-                <div className="flex">
+            <div className = "border rounded-2xl mt-4">
+                <div className = "flex">
                     <div className = "py-3 px-4">
                         <label>Check in:</label>
                         <input type = "date" 
-                               value={checkIn} 
-                               onChange={ev => setCheckIn(ev.target.value)}/>
+                               value = {checkIn} 
+                               onChange = {ev => setCheckIn(ev.target.value)}/>
                     </div>
                     <div className = "py-3 px-4 border-l">
                         <label>Check out:</label>
                         <input type = "date" 
-                               value={checkOut} 
-                               onChange={ev => setCheckOut(ev.target.value)}/>
+                               value = {checkOut} 
+                               onChange = {ev => setCheckOut(ev.target.value)}/>
                     </div>
                 </div>
                 <div className = "py-3 px-4 border-t">
                         <label>Number of Guests</label>
                         <input type = "number" 
-                               value={numberOfGuests} 
-                               onChange={ev => setNumberOfGuests(ev.target.value)}/>
+                               value = {numberOfGuests} 
+                               onChange = {ev => setNumberOfGuests(ev.target.value)}/>
                 </div>
                 {numberOfDays > 0 &&(
                     <div className = "py-3 px-4 border-t">
                         <label>Full Name</label>
                         <input type = "text" 
-                            placeholder="name"
-                            value={name} 
-                            onChange={ev => setName(ev.target.value)}/>
+                            placeholder = "name"
+                            value = {name} 
+                            onChange = {ev => setName(ev.target.value)}/>
 
                         <label>Phone Number</label>
                         <input type = "tel" 
-                            value={phoneNumber} 
-                            onChange={ev => setPhoneNumber(ev.target.value)}/>
+                            value = {phoneNumber} 
+                            onChange = {ev => setPhoneNumber(ev.target.value)}/>
                     </div>
                 )}
             </div>
-            <button onClick={BookPlace} className = "primary mt-4 ">
+            <button onClick = {BookPlace} className = "primary mt-4 ">
                 Book now
                 {numberOfDays > 0 &&(
                     <span> Rs.{numberOfDays * place.price}</span>

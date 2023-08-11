@@ -1,9 +1,9 @@
-import {Link, Navigate} from "react-router-dom";
 import { useContext, useState } from "react";
-import { UserContext } from "../containers/UserContext";
+import {Link, Navigate} from "react-router-dom";
 import axios from "axios";
+import { UserContext } from "../containers/UserContext";
 
-const Login =() => {
+const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);

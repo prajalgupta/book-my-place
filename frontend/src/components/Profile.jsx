@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
-import { UserContext } from "../containers/UserContext";
 import { Navigate, useParams } from "react-router-dom";
 import axios from "axios";
-import Places from "./Places"
+import Places from "./Places";
+import { UserContext } from "../containers/UserContext";
 import UserNav from "../containers/UserNav";
 
 

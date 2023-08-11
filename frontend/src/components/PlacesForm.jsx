@@ -39,19 +39,19 @@ const PlacesForm = () => {
       });
     }, [id]);
 
-    function inputHeader(text) {
+    const inputHeader = (text) => {
         return (
           <h2 className = "text-2xl mt-4">{text}</h2>
         );
       }
 
-      function inputDescription(text) {
+    const inputDescription = (text) => {
         return (
           <p className = "text-gray-500 text-sm">{text}</p>
         );
       }
 
-      function preInput(header,description) {
+    const preInput = (header,description) => {
         return (
           <div>
             {inputHeader(header)}
