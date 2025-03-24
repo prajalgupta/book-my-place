@@ -17,7 +17,7 @@ const Container = styled.div`
     flex-direction: column;
     overflow-y: scroll;
   }
-  background: ${({ theme }) => theme.bg};
+  background: ${({ theme }) => theme.purple};
   margin: 0 20px;
   border-radius: 12px 12px 0 0;
 `;
@@ -178,7 +178,17 @@ const PropertyListing = () => {
     },
   ]);
 
-  return <div>PropertyListing</div>;
+  return (
+    <Container>
+      <Property>
+        <CardWrapper>
+          {properties.map((property) => (
+            <PropertyCard property = {property}/>
+          ))}
+        </CardWrapper>
+      </Property>
+    </Container>
+  );
 };
 
 export default PropertyListing;

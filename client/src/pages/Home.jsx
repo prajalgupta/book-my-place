@@ -17,7 +17,7 @@ const Container = styled.div`
 const SearchContainer = styled.div`
   border-radius: 33px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: #A020F0;
   display: flex;
   align-items: center;
   max-width: 900px;
@@ -41,7 +41,7 @@ const LocationWrapper = styled.div`
 `;
 
 const Title = styled.div`
-  color: #000;
+  color: #ffff;
   font-weight: 500;
   width: fit-content;
 `;
@@ -96,7 +96,40 @@ const SearchButton = styled.div`
 `;
 
 const Home = () => {
-  return <div>Home</div>;
+  const [location, setLocation] = useState("");
+  const [checkInDate, setCheckInDate] = useState("");
+  const [checkOutDate, setCheckOutDate] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearchClick = () =>{
+    navigate("/properties",{
+      state: {location, checkInDate, checkOutDate},
+
+    })
+  }
+  return (
+    <Container>
+      <SearchContainer>
+        <LocationWrapper>
+          <Title>Location</Title>
+          <Desc placeholder="Where are you going?" type="text" value={location} onChange={(e) => setLocation(e.target.value)}/>
+        </LocationWrapper>
+        <CheckInWrapper>
+          <Title>Check In</Title>
+          <Desc placeholder="Start Date" type="date" value={checkInDate} onChange={(e) => setCheckInDate(e.target.value)}/>
+        </CheckInWrapper>
+        <CheckOutWrapper>
+          <Title>Check Out</Title>
+          <Desc placeholder="End Date" type="date" value={checkOutDate} onChange={(e) => setCheckOutDate(e.target.value)}/>
+        </CheckOutWrapper>
+        <SearchWrapper>
+          <SearchButton onClick={handleSearchClick}>
+            <SearchRounded sx ={{color: "inherit", fontSize:"35px"}}/>
+          </SearchButton>
+        </SearchWrapper>
+      </SearchContainer>
+    </Container>
+  );
 };
 
 export default Home;

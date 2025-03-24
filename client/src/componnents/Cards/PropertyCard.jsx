@@ -139,8 +139,20 @@ const Percent = styled.div`
   color: green;
 `;
 
-const PropertyCard = () => {
-  return <div>Property Card</div>;
+const PropertyCard = ({property}) => {
+  return (
+    <Card>
+      <Top>
+        <Image src={property?.img}/>
+        <Menu>
+          <MenuItem>
+            <FavoriteRounded sx={{fontSize : "20px"}}/>
+          </MenuItem>
+        </Menu>
+      </Top>
+      <Details></Details>
+    </Card>
+  );
 };
 
 export default PropertyCard;

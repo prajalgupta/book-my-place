@@ -50,7 +50,7 @@ const Text = styled.p`
   gap: 12px;
   font-size: 16px;
   text-align: center;
-  color: ${({ theme }) => theme.secondary + 90};
+  color: ${({ theme }) => theme.black + 90};
   margin-top: 16px;
   @media (max-width: 400px) {
     font-size: 14px;
@@ -58,7 +58,7 @@ const Text = styled.p`
 `;
 
 const TextButton = styled.div`
-  color: ${({ theme }) => theme.secondary};
+  color: ${({ theme }) => theme.black};
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 600;
@@ -74,15 +74,25 @@ const Authentication = ({ openAuth, setOpenAuth }) => {
       <Wrapper>
         <Container>
           <CloseButton onClick={() => setOpenAuth(false)}>
-            <Close sx={{ color: "white" }} />
+            <Close sx={{ color: "black" }} />
           </CloseButton>
-          {isSignIn ? <SignIn /> : <Signup />}
-          <Text>
-            {isSignIn ? "Don't have an account?" : "Already have an account?"}
-            <TextButton onClick={() => setIsSignIn(!isSignIn)}>
-              {isSignIn ? "Sign up" : "Sign in"}
-            </TextButton>
-          </Text>
+          {isSignIn ? (
+            <>
+              <SignIn setOpenAuth={setOpenAuth}/>
+              <Text>Don't have an account?
+                <TextButton onClick={()=> setIsSignIn(false)}>Sign Up
+                </TextButton>
+              </Text>
+            </>
+          ):(
+            <>
+            <Signup setOpenAuth={setOpenAuth}/>
+            <Text>Already have an account
+              <TextButton onClick={()=> setIsSignIn(true)}>Sign In
+              </TextButton>
+            </Text>
+          </> 
+          )}
         </Container>
       </Wrapper>
     </Modal>
