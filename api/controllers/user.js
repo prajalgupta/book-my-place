@@ -50,3 +50,28 @@ export const SignIn =  async(req, res, next) => {
         next(err);
     }
 };
+
+export const BookProperty =  async(req, res, next) => {
+    try{
+        const userId = req.user.id;
+        const {propertyId} =  req.body;
+
+        const property = await properties.findById(propertyId);
+        if(!property){
+            return next(createError(404, "Property not found"));
+        }
+        const user = await User.findById(userId);
+        if(!user){
+            return next(createError(404, "user not found"));
+        }
+
+        if(!user.bookings.includes(propertyId)){
+            user.bookings.push(propertyId);
+            await user.save();
+        }
+
+        return res.status(200).json({message: "Property booked"});
+    }catch(err){
+        next(err);
+    }
+};
