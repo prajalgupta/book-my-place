@@ -75,10 +75,9 @@ const BookingContainer = styled.div`
 `;
 
 const PropertyDetails = () => {
-  const properties = [
-    {
+  const property = {
       _id: "12345",
-      img: "https://via.placeholder.com/250",
+      img: "https://fakeimg.pl/400x500",
       title: "Beautiful Beach House",
       desc: "A stunning house located near the beach with amazing sea views.",
       rating: "1.5",
@@ -87,130 +86,29 @@ const PropertyDetails = () => {
         mrp: 300,
         off: 17,
       },
-    },
-    {
-      _id: "12345",
-      img: "https://via.placeholder.com/250",
-      title: "Beautiful Beach House",
-      desc: "A stunning house located near the beach with amazing sea views.",
-      rating: "1.5",
-      price: {
-        org: 250,
-        mrp: 300,
-        off: 17,
-      },
-    },
-    {
-      _id: "12345",
-      img: "https://via.placeholder.com/250",
-      title: "Beautiful Beach House",
-      desc: "A stunning house located near the beach with amazing sea views.",
-      rating: "1.5",
-      price: {
-        org: 250,
-        mrp: 300,
-        off: 17,
-      },
-    },
-    {
-      _id: "12345",
-      img: "https://via.placeholder.com/250",
-      title: "Beautiful Beach House",
-      desc: "A stunning house located near the beach with amazing sea views.",
-      rating: "1.5",
-      price: {
-        org: 250,
-        mrp: 300,
-        off: 17,
-      },
-    },
-    {
-      _id: "12345",
-      img: "https://via.placeholder.com/250",
-      title: "Beautiful Beach House",
-      desc: "A stunning house located near the beach with amazing sea views.",
-      rating: "1.5",
-      price: {
-        org: 250,
-        mrp: 300,
-        off: 17,
-      },
-    },
-    {
-      _id: "12345",
-      img: "https://via.placeholder.com/250",
-      title: "Beautiful Beach House",
-      desc: "A stunning house located near the beach with amazing sea views.",
-      rating: "1.5",
-      price: {
-        org: 250,
-        mrp: 300,
-        off: 17,
-      },
-    },
-    {
-      _id: "12345",
-      img: "https://via.placeholder.com/250",
-      title: "Beautiful Beach House",
-      desc: "A stunning house located near the beach with amazing sea views.",
-      rating: "1.5",
-      price: {
-        org: 250,
-        mrp: 300,
-        off: 17,
-      },
-    },
-    {
-      _id: "12345",
-      img: "https://via.placeholder.com/250",
-      title: "Beautiful Beach House",
-      desc: "A stunning house located near the beach with amazing sea views.",
-      rating: "1.5",
-      price: {
-        org: 250,
-        mrp: 300,
-        off: 17,
-      },
-    },
-    {
-      _id: "12345",
-      img: "https://via.placeholder.com/250",
-      title: "Beautiful Beach House",
-      desc: "A stunning house located near the beach with amazing sea views.",
-      rating: "1.5",
-      price: {
-        org: 250,
-        mrp: 300,
-        off: 17,
-      },
-    },
-    {
-      _id: "12345",
-      img: "https://via.placeholder.com/250",
-      title: "Beautiful Beach House",
-      desc: "A stunning house located near the beach with amazing sea views.",
-      rating: "1.5",
-      price: {
-        org: 250,
-        mrp: 300,
-        off: 17,
-      },
-    },
-    {
-      _id: "12345",
-      img: "https://via.placeholder.com/250",
-      title: "Beautiful Beach House",
-      desc: "A stunning house located near the beach with amazing sea views.",
-      rating: "1.5",
-      price: {
-        org: 250,
-        mrp: 300,
-        off: 17,
-      },
-    },
-  ];
+  };
 
-  return <div>PropertyDetails</div>;
+  return (
+    <Container>
+      <Image src = {property?.img} />
+      <Right>
+      <Title>{property?.title}</Title>
+        <Desc>{property?.desc}</Desc>
+        <Price>${property?.price.org}
+          <Percent>${property?.price?.off}% off</Percent>
+        </Price>
+        <RatingContainer>
+          <Rating value={property?.rating} readOnly/>
+          <Span>({property?.rating})</Span>
+        </RatingContainer>
+        <BookingContainer>
+          <DatePicker label ="Start Date"  renderInput = {(params) => <TextField{...params}/>} />
+          <DatePicker label ="End Date" renderInput = {(params) => <TextField{...params}/>}  />
+          <Button variant ="contained"color ="secondary"text ="Book Now">Book Now</Button>
+        </BookingContainer>
+      </Right>
+    </Container>
+  );
 };
 
 export default PropertyDetails;

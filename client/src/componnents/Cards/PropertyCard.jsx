@@ -93,12 +93,12 @@ const Details = styled.div`
 const Title = styled.div`
   font-size: 16px;
   font-weight: 700;
-  color: ${({ theme }) => theme.text_primary};
+  color: ${({ theme }) => theme.white};
 `;
 const Desc = styled.div`
   font-size: 14px;
   font-weight: 400;
-  color: ${({ theme }) => theme.text_primary};
+  color: ${({ theme }) => theme.white};
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -110,7 +110,7 @@ const Location = styled.div`
   font-weight: 500;
   padding: 2px 10px;
   border-radius: 20px;
-  background: ${({ theme }) => theme.disabled + 50};
+  background: ${({ theme }) => theme.white + 50};
 `;
 
 const Price = styled.div`
@@ -119,27 +119,28 @@ const Price = styled.div`
   gap: 8px;
   font-size: 18px;
   font-weight: 500;
-  color: ${({ theme }) => theme.text_primary};
+  color: ${({ theme }) => theme.white};
 `;
 const Strike = styled.div`
   font-size: 14px;
   font-weight: 500;
-  color: ${({ theme }) => theme.text_secondary + 60};
+  color: ${({ theme }) => theme.white + 60};
   text-decoration: line-through;
-  text-decoration-color: ${({ theme }) => theme.text_secondary + 50};
+  text-decoration-color: ${({ theme }) => theme.white + 50};
 `;
 const Span = styled.div`
   font-size: 14px;
   font-weight: 500;
-  color: ${({ theme }) => theme.text_secondary};
+  color: ${({ theme }) => theme.white};
 `;
 const Percent = styled.div`
   font-size: 12px;
   font-weight: 500;
-  color: green;
+  color: white;
 `;
 
 const PropertyCard = ({property}) => {
+  const navigate = useNavigate();
   return (
     <Card>
       <Top>
@@ -149,8 +150,20 @@ const PropertyCard = ({property}) => {
             <FavoriteRounded sx={{fontSize : "20px"}}/>
           </MenuItem>
         </Menu>
+        <Rate>
+          <Rating value ={property?.rating} sx ={{fontSize: "14px"}}/>
+        </Rate>
       </Top>
-      <Details></Details>
+      <Details onClick={()=>navigate(`/properties/${property?._id}`)}>
+        <Title>{property?.title}</Title>
+        <Desc>{property?.desc}</Desc>
+        <Location>{property?.location}</Location>
+        <Price>${property?.price.org}
+          <Strike>${property?.price?.mrp}</Strike>
+          <Percent>${property?.price?.off}% off</Percent>
+        </Price>
+
+      </Details>
     </Card>
   );
 };

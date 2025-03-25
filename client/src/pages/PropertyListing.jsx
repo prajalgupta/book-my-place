@@ -45,7 +45,7 @@ const PropertyListing = () => {
   const [properties, setProperties] = useState([
     {
       _id: "12345",
-      img: "https://via.placeholder.com/250",
+      img: "https://fakeimg.pl/400x500",
       title: "Beautiful Beach House",
       desc: "A stunning house located near the beach with amazing sea views.",
       rating: "1.5",
@@ -58,10 +58,11 @@ const PropertyListing = () => {
     },
     {
       _id: "12345",
-      img: "https://via.placeholder.com/250",
+      img: "https://fakeimg.pl/400x500",
       title: "Beautiful Beach House",
       desc: "A stunning house located near the beach with amazing sea views.",
       rating: "1.5",
+      location: "Los, Angles",
       price: {
         org: 250,
         mrp: 300,
@@ -70,10 +71,11 @@ const PropertyListing = () => {
     },
     {
       _id: "12345",
-      img: "https://via.placeholder.com/250",
+      img: "https://fakeimg.pl/400x500",
       title: "Beautiful Beach House",
       desc: "A stunning house located near the beach with amazing sea views.",
       rating: "1.5",
+      location: "Los, Angles",
       price: {
         org: 250,
         mrp: 300,
@@ -82,10 +84,11 @@ const PropertyListing = () => {
     },
     {
       _id: "12345",
-      img: "https://via.placeholder.com/250",
+      img: "https://fakeimg.pl/400x500",
       title: "Beautiful Beach House",
       desc: "A stunning house located near the beach with amazing sea views.",
       rating: "1.5",
+      location: "Los, Angles",
       price: {
         org: 250,
         mrp: 300,
@@ -94,10 +97,11 @@ const PropertyListing = () => {
     },
     {
       _id: "12345",
-      img: "https://via.placeholder.com/250",
+      img: "https://fakeimg.pl/400x500",
       title: "Beautiful Beach House",
       desc: "A stunning house located near the beach with amazing sea views.",
       rating: "1.5",
+      location: "Los, Angles",
       price: {
         org: 250,
         mrp: 300,
@@ -106,10 +110,11 @@ const PropertyListing = () => {
     },
     {
       _id: "12345",
-      img: "https://via.placeholder.com/250",
+      img: "https://fakeimg.pl/400x500",
       title: "Beautiful Beach House",
       desc: "A stunning house located near the beach with amazing sea views.",
       rating: "1.5",
+      location: "Los, Angles",
       price: {
         org: 250,
         mrp: 300,
@@ -118,10 +123,11 @@ const PropertyListing = () => {
     },
     {
       _id: "12345",
-      img: "https://via.placeholder.com/250",
+      img: "https://fakeimg.pl/400x500",
       title: "Beautiful Beach House",
       desc: "A stunning house located near the beach with amazing sea views.",
       rating: "1.5",
+      location: "Los, Angles",
       price: {
         org: 250,
         mrp: 300,
@@ -130,10 +136,11 @@ const PropertyListing = () => {
     },
     {
       _id: "12345",
-      img: "https://via.placeholder.com/250",
+      img: "https://fakeimg.pl/400x500",
       title: "Beautiful Beach House",
       desc: "A stunning house located near the beach with amazing sea views.",
       rating: "1.5",
+      location: "Los, Angles",
       price: {
         org: 250,
         mrp: 300,
@@ -142,10 +149,11 @@ const PropertyListing = () => {
     },
     {
       _id: "12345",
-      img: "https://via.placeholder.com/250",
+      img: "https://fakeimg.pl/400x500",
       title: "Beautiful Beach House",
       desc: "A stunning house located near the beach with amazing sea views.",
       rating: "1.5",
+      location: "Los, Angles",
       price: {
         org: 250,
         mrp: 300,
@@ -154,10 +162,11 @@ const PropertyListing = () => {
     },
     {
       _id: "12345",
-      img: "https://via.placeholder.com/250",
+      img: "https://fakeimg.pl/400x500",
       title: "Beautiful Beach House",
       desc: "A stunning house located near the beach with amazing sea views.",
       rating: "1.5",
+      location: "Los, Angles",
       price: {
         org: 250,
         mrp: 300,
@@ -166,10 +175,11 @@ const PropertyListing = () => {
     },
     {
       _id: "12345",
-      img: "https://via.placeholder.com/250",
+      img: "https://fakeimg.pl/400x500",
       title: "Beautiful Beach House",
       desc: "A stunning house located near the beach with amazing sea views.",
       rating: "1.5",
+      location: "Los, Angles",
       price: {
         org: 250,
         mrp: 300,

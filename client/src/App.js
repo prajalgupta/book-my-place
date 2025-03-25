@@ -10,6 +10,8 @@ import ToastMessage from "./componnents/ToastMessage";
 import PropertyDetails from "./pages/PropertyDetails";
 import PropertyListing from "./pages/PropertyListing";
 import background from "./utils/Images/Background.svg";
+import Contact from "./pages/Contact";
+import Blogs from "./pages/Blogs";
 
 const Container = styled.div`
   width: 100%;
@@ -38,6 +40,8 @@ function App() {
             <Route path="/" exact element={<Home />} />
             <Route path="/properties" exact element={<PropertyListing />} />
             <Route path="/properties/:id" exact element={<PropertyDetails />} />
+            <Route path="/contact" exact element ={<Contact/>}/>
+            <Route path="/blogs" exact element ={<Blogs/>}/>
           </Routes>
           {openAuth && <Authentication openAuth={openAuth} setOpenAuth={setOpenAuth} />}
         </Container>
