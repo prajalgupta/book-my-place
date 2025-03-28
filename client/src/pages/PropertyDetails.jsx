@@ -75,6 +75,7 @@ const BookingContainer = styled.div`
 `;
 
 const PropertyDetails = () => {
+  const {id} = useParams();
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [property, setProperty] = useState();
