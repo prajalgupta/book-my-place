@@ -4,7 +4,7 @@ import { DatePicker } from "@mui/lab";
 import { CircularProgress, Rating, TextField } from "@mui/material";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import { bookProperty } from "../api";
+import { getPropertyDetails, bookProperty } from "../api";
 import { openSnackbar } from "../redux/reducers/snackbarSlice";
 import Button from "../componnents/Button";
 
@@ -75,21 +75,25 @@ const BookingContainer = styled.div`
 `;
 
 const PropertyDetails = () => {
-  const property = {
-      _id: "12345",
-      img: "https://fakeimg.pl/400x500",
-      title: "Beautiful Beach House",
-      desc: "A stunning house located near the beach with amazing sea views.",
-      rating: "1.5",
-      price: {
-        org: 250,
-        mrp: 300,
-        off: 17,
-      },
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [property, setProperty] = useState();
+  const [loading, setLoading] = useState(false);
+
+  const getPropertyDetailsByID = async () => {
+    setLoading(true);
+    await getPropertyDetails(id).then((res) =>{
+      setProperty(res.data);
+      setLoading(false);
+    });
   };
 
+  useEffect(() =>{
+      getPropertyDetailsByID();
+    },[]);
+
   return (
-    <Container>
+    <>{loading ? <CircularProgress/> : <Container>
       <Image src = {property?.img} />
       <Right>
       <Title>{property?.title}</Title>
@@ -107,7 +111,8 @@ const PropertyDetails = () => {
           <Button variant ="contained"color ="secondary"text ="Book Now">Book Now</Button>
         </BookingContainer>
       </Right>
-    </Container>
+    </Container>}</>
+   
   );
 };
 
